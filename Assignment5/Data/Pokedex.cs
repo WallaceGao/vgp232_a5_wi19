@@ -21,18 +21,40 @@ namespace Assignment5.Data
 
         Pokemon GetPokemonByIndex(int index)
         {
-            throw new NotImplementedException();
+            foreach (var item in Pokemons)
+            {
+                if(item.Index == index)
+                {
+                    return item;
+                }
+	        }
+            return null;
         }
 
         Pokemon GetPokemonByName(string name)
         {
-            throw new NotImplementedException();
+            foreach (var item in Pokemons)
+            {
+                if(item.Name == name)
+                {
+                    return item;
+                }
+	        }
+            return null;
         }
 
         List<Pokemon> GetPokemonsOfType(string type)
         {
             // Note to check both Type1 and Type2
-            throw new NotImplementedException();
+            List<Pokemon> newList = new List<Pokemon>();
+            foreach (var item in Pokemons)
+            {
+                if(item.Type1 == type || item.Type2 == type)
+                {
+                    newList.Add(item);
+                }
+	        }
+            return newList;
         }
 
         Pokemon GetHighestHPPokemon()
