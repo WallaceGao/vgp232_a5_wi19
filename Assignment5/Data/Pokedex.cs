@@ -24,9 +24,16 @@ namespace Assignment5.Data
             throw new NotImplementedException();
         }
 
-        Pokemon GetPokemonByName(string name)
+        public Pokemon GetPokemonByName(string name)
         {
-            throw new NotImplementedException();
+            foreach (var item in Pokemons)
+            {
+                if(item.Name == name)
+                {
+                    return item;
+                }
+	        }
+            return null;
         }
 
         List<Pokemon> GetPokemonsOfType(string type)
