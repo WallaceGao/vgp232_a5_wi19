@@ -9,7 +9,7 @@ using Assignment5.Data;
 
 namespace Assignment5.Test
 {
-    public class PokemonReadTest
+    public class ItemTest
     {
         const string TEST_DATA_OUTPUT_FILE = "output.csv";
         const string TEST_DATA_INPUT_FILE = "pokemon151.xml";
