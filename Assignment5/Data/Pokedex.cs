@@ -19,9 +19,16 @@ namespace Assignment5.Data
             Pokemons = new List<Pokemon>();
         }
 
-        Pokemon GetPokemonByIndex(int index)
+        public Pokemon GetPokemonByIndex(int index)
         {
-            throw new NotImplementedException();
+            foreach (var item in Pokemons)
+            {
+                if(item.Index == index)
+                {
+                    return item;
+                }
+	        }
+            return null;
         }
 
         public Pokemon GetPokemonByName(string name)
@@ -36,30 +43,70 @@ namespace Assignment5.Data
             return null;
         }
 
-        List<Pokemon> GetPokemonsOfType(string type)
+        public List<Pokemon> GetPokemonsOfType(string type)
         {
             // Note to check both Type1 and Type2
-            throw new NotImplementedException();
+            List<Pokemon> newList = new List<Pokemon>();
+            foreach (var item in Pokemons)
+            {
+                if(item.Type1 == type || item.Type2 == type)
+                {
+                    newList.Add(item);
+                }
+	        }
+            return newList;
         }
 
-        Pokemon GetHighestHPPokemon()
+        public Pokemon GetHighestHPPokemon()
         {
-            throw new NotImplementedException();
+            Pokemon highestHP = new Pokemon();
+            foreach(var item in Pokemons)
+            {
+                if(highestHP.HP < item.HP)
+                {
+                    highestHP = item;
+                }
+            }
+            return highestHP;
         }
 
-        Pokemon GetHighestAttackPokemon()
+        public Pokemon GetHighestAttackPokemon()
         {
-            throw new NotImplementedException();
+            Pokemon highestAttack = new Pokemon();
+            foreach (var item in Pokemons)
+            {
+                if (highestAttack.Attack < item.Attack)
+                {
+                    highestAttack = item;
+                }
+            }
+            return highestAttack;
         }
 
-        Pokemon GetHighestDefensePokemon()
+        public Pokemon GetHighestDefensePokemon()
         {
-            throw new NotImplementedException();
+            Pokemon highestDefense = new Pokemon();
+            foreach (var item in Pokemons)
+            {
+                if (highestDefense.Defense < item.Defense)
+                {
+                    highestDefense = item;
+                }
+            }
+            return highestDefense;
         }
 
-        Pokemon GetHighestMaxCPPokemon()
+        public Pokemon GetHighestMaxCPPokemon()
         {
-            throw new NotImplementedException();
+            Pokemon highestMaxCP = new Pokemon();
+            foreach (var item in Pokemons)
+            {
+                if (highestMaxCP.MaxCP < item.MaxCP)
+                {
+                    highestMaxCP = item;
+                }
+            }
+            return highestMaxCP;
         }
 
     }
